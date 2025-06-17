@@ -46,17 +46,18 @@
   <div class="burger" onclick="toggleMenu()">☰</div>
 </header>
 
-  <script>
+<script>
   document.getElementById('lang-toggle').addEventListener('click', () => {
-    const currentPage = window.location.pathname;
+    const path = window.location.pathname;
 
-    if (currentPage.includes('-en')) {
-      // Si on est sur la version EN → retour FR
-      window.location.href = currentPage.replace('-en', '');
+    // Chemin de base de ton site GitHub Pages (sans slash à la fin)
+    const base = '/infrastructure-uqar';
+
+    // Si déjà en anglais → revenir à FR
+    if (path.includes('-en.html')) {
+      window.location.href = base + '/index.html';
     } else {
-      // Sinon → aller en version EN
-      const newPage = currentPage.replace('.html', '-en.html');
-      window.location.href = newPage;
+      window.location.href = base + '/index-en.html';
     }
   });
 </script>
