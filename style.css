@@ -1811,6 +1811,84 @@ section {
   margin-bottom: 40px;
 }
 
+@media (max-width: 768px) {
+  /* Section Équipe */
+  .equipe {
+    padding: 60px 20px;
+  }
+
+  .equipe .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .equipe .card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .equipe img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .modal-content.profile-modal {
+    flex-direction: column;
+    width: 95%;
+    max-height: 95vh;
+  }
+
+  .profile-left {
+    max-width: 100%;
+    height: 240px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .profile-left img {
+    border-radius: 12px 12px 0 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .profile-right {
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 22px;
+  }
+
+  .modal-content h3 {
+    font-size: 16px;
+    margin: 12px 16px 6px 16px;
+  }
+
+  .modal-content p,
+  .modal-content ul {
+    font-size: 14px;
+    margin: 0 16px 14px 16px;
+  }
+
+  .tags span {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .modal-content .actions {
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
 
 
 
