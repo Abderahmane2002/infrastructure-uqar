@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prof. Martin Dubois</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    const burger = document.querySelector(".burger");
+    nav.classList.toggle("show");
+
+    // Toggle le symbole du bouton
+    if (burger.textContent === "☰") {
+      burger.textContent = "✖";
+    } else {
+      burger.textContent = "☰";
+    }
+  }
+  
+</script>
+
+
+
+
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      🎓 <strong>Dr.Xuande Chen</strong><br />
+      <span class="sous-titre">Ingénierie civil</span>
+    </div>
+    <nav id="nav-links" class="nav-links">
+      <a href="#accueil" class="active">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#projets">Projets</a>
+      <a href="#equipe">Équipe</a>
+      <a href="#publications">Publications</a>
+      <a href="#actualites">Actualités</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#jobs">Offres d'emploi</a>
+      <a href="#contact">Contact</a>
+      <button id="lang-toggle" class="lang-btn" type="button" onclick="window.location.href='index-en.html'">EN</button>
+    </nav>
+    <div class="burger" onclick="toggleMenu()">☰</div>
+
+  </header>
+
+  <script>
+  document.getElementById('lang-toggle').addEventListener('click', () => {
+    const currentPage = window.location.pathname;
+
+    if (currentPage.includes('-en')) {
+      // Si on est sur la version EN → retour FR
+      window.location.href = currentPage.replace('-en', '');
+    } else {
+      // Sinon → aller en version EN
+      const newPage = currentPage.replace('.html', '-en.html');
+      window.location.href = newPage;
+    }
+  });
+</script>
+
+
+
+
+
+  <!-- ACCUEIL -->
+<section id="accueil" class="hero" lang="fr" >
+  <div class="blur-bg"></div>
+
+  <!-- Texte à gauche -->
+  <div class="hero-left">
+    <span class="badge">Groupe de recherche en durabilité des matériaux</span>
+    <h1>
+      Bienvenue à<br />
+      <span class="highlight">Infrastructure Durable UQAR</span>
+    </h1>
+    <p>
+      Notre équipe interdisciplinaire développe des solutions scientifiques et numériques pour améliorer la durabilité des matériaux de construction.
+    </p>
+    <div class="hero-buttons">
+      <a href="#projets" class="btn btn-primary">Voir nos projets →</a>
+      <a href="#contact" class="btn btn-outline">Nous contacter</a>
+    </div>
+    <div class="hero-infos">
+      <div><img src="icons/layers.svg" /> +10 projets en cours</div>
+      <div><img src="icons/flask-conical.svg" /> Laboratoire matériaux UQAR</div>
+      <div><img src="icons/earth.svg" /> Partenariats internationaux</div>
+    </div>
+  </div>
+
+  <!-- Image à droite -->
+  <div class="hero-right">
+    <img src="images/uqarr.jpg" alt="Image UQAR" />
+  </div>
+</section>
+
+<!-- apropos  -->
+
+<section id="apropos" class="apropos section reveal" lang="fr">
+  <div class="profil-card fade-in">
+    <h3>Prof. Xuande Chen, ing., Ph.D.</h3>
+    <p>
+      Professeur agrégé<br>
+      Département de mathématiques, informatique et génie<br>
+      Université du Québec à Rimouski
+    </p>
+    <hr />
+    <h4>Domaines de recherche</h4>
+    <ul>
+      <li>Béton haute performance (BHP) & BFUP</li>
+      <li>Durabilité des matériaux de construction</li>
+      <li>Transport multiphysique en milieux poreux</li>
+      <li>Méthodes numériques (FEM, FVM, Lattice)</li>
+      <li>Analyse dynamique des structures</li>
+    </ul>
+    <h4>Contact</h4>
+    <p>
+      📧 xuande_chen@uqar.ca<br>
+      ☎️ (418) 723‑1986 poste 5417
+    </p>
+  </div>
+
+  <div class="bio">
+    <h2>À propos</h2>
+
+    <div class="bio-section fade-in">
+    
+<p>Notre groupe de recherche se consacre à l'approfondissement de la compréhension, de la simulation et de la prédiction des défis liés à la durabilité des matériaux, structures et réseaux d'infrastructures en génie civil. Nous visons à développer des stratégies innovantes pour l'atténuation des risques et la gestion durable à long terme, afin de soutenir des pratiques d'ingénierie résilientes et durables.</p> <p>Nos activités de recherche actuelles se concentrent sur les domaines clés suivants :</p> <p>• Évaluation de la durabilité et réhabilitation des matériaux et structures de génie civil</p> <p>• Surveillance et modélisation des infrastructures soumises à des conditions climatiques extrêmes et à des actions d'origine humaine</p> <p>• Intégration de l'intelligence artificielle guidée par la physique dans les simulations multiphysiques du béton</p> <p>• Évaluation et gestion durable des réseaux d'infrastructures urbaines et côtières</p> </div>
+</section>
+
+<!-- PROJETS - FRANÇAIS -->
+<section id="projets" class="projets" lang="fr">
+  <h2>Projets de recherche en vedette</h2>
+  <p>Découvrez nos travaux innovants dans la durabilité des infrastructures en béton.</p>
+  <button class="view-all fade-in">Voir tous les projets</button>
+
+  <div class="project-grid">
+
+  <div class="project-card" onclick="openModal('modal1')">
+    <img src="images/project 1.jpg" alt="Modélisation chlorures" />
+    <div class="project-content">
+        <h3>Modélisation du transport de chlorures</h3>
+        <p>Simulation numérique pour prédire la pénétration des ions chlorures dans les structures de béton exposées aux environnements agressifs.</p>
+        <a href="#">En savoir plus →</a>
+    </div>
+  </div>
+  <!-- PROJET NOHEMA -->
+  <div class="project-card" onclick="openModal('modal-project-nohema')">
+    <img src="images/Mesure of chloride in concrete.png" alt="Mesuring of chloride content" />
+    <div class="project-content">
+      <h3>Mesuring of chloride content in concrete structures</h3>
+      <p>Projet de surveillance de la santé structurelle par mesure du contenu en chlorures dans le béton, avec instrumentation avancée et essais sur site.</p>
+      <a href="#">En savoir plus →</a>
+    </div>
+  </div>
+
+  <!-- PROJET ARIJ -->
+  <div class="project-card" onclick="openModal('modal-project-arij')">
+    <img src="images/Projet 3.png" alt="Modélisation multi-ionique" />
+    <div class="project-content">
+      <h3>Modélisation numérique des échanges d’ions et de la corrosion dans les infrastructures marines</h3>
+      <p>Développement d’un modèle numérique multi-ionique couplé à l’équilibre chimique pour simuler les phénomènes de corrosion dans les infrastructures marines.</p>
+      <a href="#">En savoir plus →</a>
+    </div>
+  </div>
+
+  <!-- PROJET FATIMA -->
+  <div class="project-card" onclick="openModal('modal-project-fatima')">
+    <img src="images/projet 4.jpg" alt="Modélisation multi-ionique" />
+    <div class="project-content">
+      <h3>Modélisation multi-ionique du transport des ions chlorure dans le béton</h3>
+      <p>Simulation avancée du transport multi-ionique dans le béton armé exposé en milieu maritime, pour améliorer la durabilité des structures.</p>
+      <a href="#">En savoir plus →</a>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<!-- MODAL -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+
+    <!-- En-tête avec image -->
+    <div class="modal-header-image">
+      <img src="images/project 1.jpg" alt="Modélisation chlorures">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <div class="modal-header-text">
+        <h2>Modélisation du transport de chlorures</h2>
+        <h4>
+          <img src="icons/calendar.svg" style="width: 16px"> 2024 - 2025 &nbsp;&nbsp;
+          <img src="icons/team.svg" style="width: 16px"> 1 étudiant, supervision UQAR/ENSAM
+        </h4>
+      </div>
+    </div>
+
+    <!-- Corps du modal -->
+    <div class="tabs">
+      <button onclick="openTab('overview', event)" class="tab active">Aperçu</button>
+      <button onclick="openTab('goals', event)" class="tab">Objectifs</button>
+      <button onclick="openTab('timeline', event)" class="tab">Échéancier</button>
+      <button onclick="openTab('results', event)" class="tab">Résultats</button>
+    </div>
+
+    <div class="tab-content" id="overview">
+      <p>
+        Ce projet vise à simuler la pénétration des ions chlorures dans le béton à l’aide de modèles numériques en 1D et 2D. Il repose sur des équations de diffusion couplées à l'humidité et intègre les effets de la capillarité.
+      </p>
+      <h4>Approche scientifique</h4>
+      <p>
+        La modélisation repose sur des méthodes numériques (FEM/FDM) et s’appuie sur des données expérimentales pour la calibration. Une extension vers un cas réel (pont à Rimouski) est prévue.
+      </p>
+    </div>
+
+    <div class="tab-content" id="goals" style="display:none;">
+      <p>
+        L’objectif principal est de développer un outil de simulation fiable permettant de prédire la pénétration des chlorures dans des structures en béton exposées à des environnements agressifs, tels que les milieux marins ou les zones soumises aux sels de déglaçage.
+      </p>
+    </div>
+
+    <div class="tab-content" id="timeline" style="display: none;">
+      <ul>
+        <li>Septembre 2024 : Début du projet et état de l’art</li>
+        <li>Octobre 2024 : Modélisation 1D et validation</li>
+        <li>Décembre 2024 : Extension vers un modèle 2D</li>
+        <li>Janvier 2025 : Intégration de données expérimentales</li>
+        <li>Avril 2025 : Application au cas du pont de Rimouski</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="results" style="display:none;">
+      <p>
+        Les résultats attendus incluent des profils de concentration en chlorures simulés, la validation par des mesures expérimentales, et des visualisations en 2D de la progression de la contamination. Un prototype d’interface utilisateur pour les ingénieurs est également envisagé.
+      </p>
+    </div>
+
+    <div class="modal-footer">
+      <button class="view-all">Voir tous les projets</button>
+      <a href="#" class="btn-outline" target="_blank">Accéder au dépôt</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL NOHEMA -->
+<div id="modal-project-nohema" class="modal">
+  <div class="modal-content">
+
+    <div class="modal-header-image">
+      <img src="images/Mesure of chloride in concrete.png" alt="Mesuring of chloride content">
+      <span class="close" onclick="closeModal('modal-nohema')">&times;</span>
+      <div class="modal-header-text">
+        <h2>Mesuring of chloride content in concrete structures</h2>
+        <h4>
+          <img src="icons/calendar.svg" style="width: 16px"> Mai 2025 - Août 2025 &nbsp;&nbsp;
+          <img src="icons/team.svg" style="width: 16px"> Nohema Lopez Duran, supervision UQAR
+        </h4>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button onclick="openTab('overview-nohema', event)" class="tab active">Aperçu</button>
+      <button onclick="openTab('goals-nohema', event)" class="tab">Objectifs</button>
+      <button onclick="openTab('timeline-nohema', event)" class="tab">Échéancier</button>
+      <button onclick="openTab('results-nohema', event)" class="tab">Résultats</button>
+    </div>
+
+    <div class="tab-content" id="overview-nohema">
+      <p>
+        Ce projet vise à modéliser le contenu en chlorures des structures en béton à l’aide de mesures avancées et d’un suivi sur le terrain.
+      </p>
+    </div>
+
+    <div class="tab-content" id="goals-nohema" style="display:none;">
+      <ul>
+        <li>Comprendre l’impact du microclimat marin sur les structures en béton.</li>
+        <li>Quantifier les impacts avec des techniques de surveillance de la santé structurelle.</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="timeline-nohema" style="display:none;">
+      <ul>
+        <li>Semaine 1 : Intégration dans le groupe de recherche</li>
+        <li>Semaines 2-3 : Revue de la littérature</li>
+        <li>Semaines 4-10 : Conception expérimentale et essais avec l’instrument</li>
+        <li>Semaines 11-12 : Rédaction du rapport de synthèse</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="results-nohema" style="display:none;">
+      <ul>
+        <li>Rapport complet sur les méthodes d’essai.</li>
+        <li>Rapport technique de l’instrument.</li>
+        <li>Rapport de synthèse sur le stage.</li>
+      </ul>
+    </div>
+
+    <div class="modal-footer">
+      <button class="view-all">Voir tous les projets</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL ARIJ -->
+<div id="modal-project-arij" class="modal">
+  <div class="modal-content">
+    <div class="modal-header-image">
+      <img src="images/Projet 3.png" alt="Modélisation multi-ionique">
+      <span class="close" onclick="closeModal('modal-arij')">&times;</span>
+      <div class="modal-header-text">
+        <h2>Modélisation numérique des échanges d’ions et de la corrosion dans les infrastructures marines</h2>
+        <h4>
+          <img src="icons/calendar.svg" style="width: 16px"> 2025 &nbsp;&nbsp;
+          <img src="icons/team.svg" style="width: 16px"> Arij Ben Youssef, supervision UQAR
+        </h4>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button onclick="openTab('overview-arij', event)" class="tab active">Aperçu</button>
+      <button onclick="openTab('goals-arij', event)" class="tab">Objectifs</button>
+      <button onclick="openTab('timeline-arij', event)" class="tab">Échéancier</button>
+      <button onclick="openTab('results-arij', event)" class="tab">Résultats</button>
+    </div>
+
+    <div class="tab-content" id="overview-arij">
+      <p>
+        Ce projet vise à développer un modèle numérique multi-ionique couplé à l’équilibre chimique pour simuler les phénomènes de corrosion dans les infrastructures marines.
+      </p>
+    </div>
+
+    <div class="tab-content" id="goals-arij" style="display:none;">
+      <ul>
+        <li>Développer un modèle multi-ionique couplé à l’équilibre chimique.</li>
+        <li>Simuler la pénétration des ions (Cl⁻, Na⁺, Ca²⁺, etc.) dans le béton.</li>
+        <li>Valider le modèle avec des données expérimentales.</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="timeline-arij" style="display:none;">
+      <ul>
+        <li>2024-2025 : Revue de la littérature, développement des équations, implémentation du code.</li>
+        <li>2025-2026 : Simulation de cas concrets, calibration du modèle.</li>
+        <li>2026-2027 : Validation expérimentale, rédaction de publications.</li>
+        <li>2028 : Finalisation de la thèse et soutenance.</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="results-arij" style="display:none;">
+      <ul>
+        <li>Modèle multi-ionique précis du transport dans le béton.</li>
+        <li>Compréhension des mécanismes de dégradation par ions chlorure.</li>
+        <li>Outils numériques pour l’évaluation de la durabilité.</li>
+        <li>Recommandations pour la conception des ouvrages.</li>
+      </ul>
+    </div>
+
+    <div class="modal-footer">
+      <button class="view-all">Voir tous les projets</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL FATIMA -->
+<div id="modal-project-fatima" class="modal">
+  <div class="modal-content">
+    <div class="modal-header-image">
+      <img src="images/projet 4.jpg" alt="Modélisation multi-ionique">
+      <span class="close" onclick="closeModal('modal-fatima')">&times;</span>
+      <div class="modal-header-text">
+        <h2>Modélisation multi-ionique du transport des ions chlorure dans le béton</h2>
+        <h4>
+          <img src="icons/calendar.svg" style="width: 16px"> 2024-2028 &nbsp;&nbsp;
+          <img src="icons/team.svg" style="width: 16px"> Fatima Ezzahrae Hafidi, supervision UQAR
+        </h4>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button onclick="openTab('overview-fatima', event)" class="tab active">Aperçu</button>
+      <button onclick="openTab('goals-fatima', event)" class="tab">Objectifs</button>
+      <button onclick="openTab('timeline-fatima', event)" class="tab">Échéancier</button>
+      <button onclick="openTab('results-fatima', event)" class="tab">Résultats</button>
+    </div>
+
+    <div class="tab-content" id="overview-fatima">
+      <p>
+        Ce projet vise à modéliser le transport multi-ionique, notamment des ions chlorure, dans le béton armé exposé aux environnements maritimes.
+      </p>
+    </div>
+
+    <div class="tab-content" id="goals-fatima" style="display:none;">
+      <ul>
+        <li>Développer un modèle multi-ionique précis du transport ionique.</li>
+        <li>Évaluer la durabilité des infrastructures marines.</li>
+        <li>Améliorer la conception et l’entretien des ouvrages.</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="timeline-fatima" style="display:none;">
+      <ul>
+        <li>2024-2025 : Revue de la littérature, développement du modèle.</li>
+        <li>2025-2026 : Simulation et calibration du modèle.</li>
+        <li>2026-2027 : Validation expérimentale et publications.</li>
+        <li>2028 : Soutenance de thèse.</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="results-fatima" style="display:none;">
+      <ul>
+        <li>Modèle multi-ionique du transport dans le béton.</li>
+        <li>Meilleure compréhension des mécanismes de dégradation.</li>
+        <li>Outils numériques pour l’évaluation de la durabilité.</li>
+        <li>Recommandations pour les ouvrages maritimes.</li>
+      </ul>
+    </div>
+
+    <div class="modal-footer">
+      <button class="view-all">Voir tous les projets</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ÉQUIPE -->
+<section id="equipe" class="equipe" lang="fr">
+  <h2>Notre Équipe</h2>
+  
+  <!-- Chercheur Principal -->
+    <h3 class="subsection-title">Chercheur Principal</h3>
+    <div class="cards">
+      <!-- Prof. Chen -->
+      <div class="card" onclick="openModal('modal-xuande')">
+        <img src="images/chen-xuande.jpg" alt="Xuande Chen" />
+        <h3>Dr. Xuande Chen</h3>
+        <p class="role">Professeur adjoint, Directeur scientifique</p>
+        <p>Expert en durabilité des matériaux, monitoring d'infrastructures, modélisation multiphysique et gestion durable des réseaux côtiers.</p>
+      </div>
+    </div>
+
+  <!-- Collaborateurs -->
+  <h3 class="subsection-title">Collaborateurs</h3>
+  <div class="cards">
+    <!-- Prof. Wang -->
+    <div class="card" onclick="openModal('modal-wang')">
+      <img src="images/wang-xiaodong.jpg" alt="Xiaodong Wang" />
+      <h3>Dr. Xiaodong Wang</h3>
+      <p class="role">Professeur, Université du Québec à Rimouski</p>
+      <p>Spécialiste en génie civil appliqué aux structures intelligentes et durables, modélisation avancée et dynamique des matériaux.</p>
+    </div>
+  </div>
+
+  <!-- Étudiants -->
+  <h3 class="subsection-title">Étudiants</h3>
+  <div class="cards">
+
+    <!-- Fatima Ezzahrae Hafidi -->
+    <div class="card" onclick="openModal('modal-fatima')">
+      <img src="images/HAFIDI.jpg" alt="Fatima Ezzahrae Hafidi" />
+      <h3>Fatima Ezzahrae Hafidi</h3>
+      <p class="role">Doctorante à l'UQAR</p>
+      <p>Travaille sur la modélisation multi-physique du transport ionique dans le béton en milieu maritime.</p>
+    </div>
+    <!-- Abderrahmane -->
+    <div class="card" onclick="openModal('modal-abderrahmane')">
+      <img src="images/abderrahmane FI.JPG" alt="Abderrahmane Sghuri" />
+      <h3>Abderrahmane Sghuri</h3>
+      <p class="role">Étudiant (Maîtrise en ingénierie)</p>
+      <p>Travaille sur la modélisation numérique du transport de chlorures dans le béton pour améliorer la durabilité des infrastructures.</p>
+    </div>
+     <!-- Nohema Lopez Duran -->
+    <div class="card" onclick="openModal('modal-nohema')">
+      <img src="images/LOPEZ.jpg" alt="Nohema Lopez Duran" />
+      <h3>Nohema Lopez Duran</h3>
+      <p class="role">Étudiante en stage Mitacs</p>
+      <p>Participe au projet de mesure de la teneur en chlorures dans les structures en béton, au sein de l'UQAR.</p>
+    </div>
+
+    <!-- Arij Ben Youssef -->
+    <div class="card" onclick="openModal('modal-arij')">
+      <img src="images/ARIJ.jpg" alt="Arij Ben Youssef" />
+      <h3>Arij Ben Youssef</h3>
+      <p class="role">Stagiaire, Étudiante en génie civil (ENIT)</p>
+      <p>Travaille sur la modélisation numérique de la corrosion et des échanges ioniques dans les infrastructures marines.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- MODALE PROF. CHEN -->
+<div id="modal-xuande" class="modal">
+  <div class="modal-content profile-modal">
+    <div class="profile-left">
+      <img src="images/chen-xuande.jpg" alt="Prof. Xuande Chen">
+    </div>
+    
+    <div class="profile-right">
+      <span class="close" onclick="closeModal('modal-xuande')">&times;</span>
+      <h2>Prof. Xuande Chen</h2>
+      <p class="role">Professeur adjoint - UQAR</p>
+      <p class="field">Génie civil | Durabilité des infrastructures | Modélisation multiphysique</p>
+
+      <h3>Biographie</h3>
+      <p>Spécialiste en durabilité des infrastructures côtières, le Pr. Chen développe des approches innovantes combinant monitoring expérimental et modélisation numérique pour prédire la dégradation des structures en béton exposées aux environnements marins extrêmes. Titulaire d'un doctorat de l'Université Laval et ancien chercheur à Northwestern University</p>
+
+      <h3>Domaines d'expertise</h3>
+      <div class="tags">
+        <span>Durabilité du béton</span>
+        <span>Modélisation multiphysique</span>
+        <span>Éléments finis</span>
+      </div>
+      <h3>Publications récentes</h3>
+      <ul class="pubs">
+        <li><strong>[J.3]</strong> Chen X. et al. (2023). "Modélisation numérique du transport multi-ionique dans le béton". <em>Archives of Civil Engineering</em> 23(232).</li>
+        <li><strong>[C.1]</strong> Chen X. et al. (2024). "Mesure de la corrosion en milieu marin par capteurs fluorescents". <em>ACEER 2024</em>, Beijing.</li>
+      </ul>
+
+      <div class="actions">
+        <button class="btn-primary" onclick="window.location.href='mailto:xuande.chen@uqar.ca'">
+          <i class="fas fa-envelope"></i> Contact
+        </button>
+        <button class="btn-outline" onclick="window.open('cv_chen_full.pdf')">
+          <i class="fas fa-download"></i> Télécharger le CV complet
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODALE PROF. WANG -->
+<div id="modal-wang" class="modal">
+  <div class="modal-content profile-modal">
+    <div class="profile-left">
+      <img src="images/wang-xiaodong.jpg" alt="Prof. Xiaodong Wang">
+    </div>
+    <div class="profile-right">
+      <span class="close" onclick="closeModal('modal-wang')">&times;</span>
+      <h2>Prof. Xiaodong Wang</h2>
+      <p class="role">Professeur</p>
+      <p class="field">Université du Québec à Rimouski</p>
+
+      <h3>Biographie</h3>
+      <p>Le Pr. Wang est reconnu pour ses travaux sur les structures intelligentes, les matériaux durables et les systèmes dynamiques avancés en génie civil.</p>
+
+      <h3>Domaine de recherche</h3>
+      <div class="tags">
+        <span>Structures intelligentes</span>
+        <span>Dynamique des structures</span>
+        <span>Durabilité</span>
+        <span>Modélisation avancée</span>
+      </div>
+
+      <h3>Publications</h3>
+      <ul class="pubs">
+        <li>Wang X. (2023). "Smart Monitoring Systems for Infrastructure". <em>Canadian Journal of Civil Engineering</em></li>
+        <li>Wang X. (2022). "Advanced Modeling Techniques in Structural Engineering". <em>Int. Conf. on Smart Structures</em></li>
+      </ul>
+
+      <div class="actions">
+        <button class="btn-primary">Contact</button>
+        <button class="btn-outline">Profil complet</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL ABDERRAHMANE -->
+<!-- modal-abderrahmane -->
+<div id="modal-abderrahmane" class="modal">
+  <div class="modal-content profile-modal">
+    <div class="profile-left">
+      <img src="images/abderrahmane FI.JPG" alt="Abderrahmane Sghuri">
+    </div>
+    <div class="profile-right">
+      <span class="close" onclick="closeModal('modal-abderrahmane')">&times;</span>
+      <h2>Abderrahmane Sghuri</h2>
+      <p class="role">Étudiant (Maîtrise en ingénierie)</p>
+      <p class="field">Université du Québec à Rimouski — Infrastructure Durable UQAR</p>
+
+      <h3>Biographie</h3>
+      <p>Étudiant en double diplôme en génie civil, actuellement en maîtrise en ingénierie à l’UQAR. Il travaille sur la modélisation numérique du transport de chlorures dans le béton, avec pour objectif d’améliorer la durabilité des infrastructures exposées aux environnements agressifs.</p>
+
+      <h3>Domaine de recherche</h3>
+      <div class="tags">
+        <span>Modélisation numérique</span>
+        <span>Transport de chlorures</span>
+        <span>Durabilité du béton</span>
+        <span>Génie civil</span>
+      </div>
+
+      <div class="actions">
+        <!--  ajouter ton LinkedIn ici par exemple -->
+        <!-- <a href="https://www.linkedin.com/in/ton-lien-linkedin" target="_blank" class="btn-outline">LinkedIn</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal-nohema -->
+<div id="modal-nohema" class="modal">
+  <div class="modal-content profile-modal">
+    <div class="profile-left">
+      <img src="images/LOPEZ.jpg" alt="Nohema Lopez Duran">
+    </div>
+    <div class="profile-right">
+      <span class="close" onclick="closeModal('modal-nohema')">&times;</span>
+      <h2>Nohema Lopez Duran</h2>
+      <p class="role">Étudiante en stage Mitacs</p>
+      <p class="field">Universidad de Guadalajara - UQAR</p>
+
+      <h3>Biographie</h3>
+      <p>Actuellement en dernière année en génie civil à l'Université de Guadalajara. Elle participe au stage Mitacs à l'UQAR sur la pénétration des ions chlorures et la surveillance environnementale.</p>
+
+      <h3>Domaine de recherche</h3>
+      <div class="tags">
+        <span>Structural Health Monitoring</span>
+        <span>Génie civil</span>
+      </div>
+
+      <div class="actions">
+        <a href="https://www.linkedin.com/in/nohema-lopez-duran-aa6617368" target="_blank" class="btn-primary">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal-arij -->
+<div id="modal-arij" class="modal">
+  <div class="modal-content profile-modal">
+    <div class="profile-left">
+      <img src="images/ARIJ.jpg" alt="Arij Ben Youssef">
+    </div>
+    <div class="profile-right">
+      <span class="close" onclick="closeModal('modal-arij')">&times;</span>
+      <h2>Arij Ben Youssef</h2>
+      <p class="role">Stagiaire, Étudiante en génie civil</p>
+      <p class="field">École Nationale d’Ingénieurs de Tunis (ENIT)</p>
+
+      <h3>Biographie</h3>
+      <p>En dernière année d'études en génie civil à l'ENIT, spécialisée en structures durables. Elle effectue son stage Mitacs à l'UQAR sur la modélisation numérique de la corrosion dans les infrastructures marines.</p>
+
+      <h3>Domaine de recherche</h3>
+      <div class="tags">
+        <span>Modélisation numérique</span>
+        <span>Durabilité</span>
+        <span>Corrosion</span>
+      </div>
+      <div class="actions">
+        <a href="https://www.linkedin.com/in/arij-ben-youssef/" target="_blank" class="btn-primary">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal-fatima -->
+<div id="modal-fatima" class="modal">
+  <div class="modal-content profile-modal">
+    <div class="profile-left">
+      <img src="images/HAFIDI.jpg" alt="Fatima Ezzahrae Hafidi">
+    </div>
+    <div class="profile-right">
+      <span class="close" onclick="closeModal('modal-fatima')">&times;</span>
+      <h2>Fatima Ezzahrae Hafidi</h2>
+      <p class="role">Doctorante</p>
+      <p class="field">Université du Québec à Rimouski</p>
+
+      <h3>Biographie</h3>
+      <p>Ingénieure d’État en génie mécanique, actuellement doctorante en génie civil à l’UQAR. Ses recherches portent sur la modélisation multi-physique du transport ionique dans le béton maritime.</p>
+
+      <h3>Domaine de recherche</h3>
+      <div class="tags">
+        <span>Modélisation numérique</span>
+        <span>Génie civil</span>
+        <span>Durabilité des matériaux</span>
+      </div>
+
+      <div class="actions">
+        <!-- pas de LinkedIn fourni -->
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- PUBLICATIONS (FRANÇAIS) -->
+<section id="publications" class="publications section" lang="fr">
+  <h2>Publications</h2>
+  
+  <!-- Articles de Journal -->
+  <h3>Articles dans des revues scientifiques</h3>
+  
+  <div class="pub-card">
+    <h4>Bridge Service Life and Impact of Maintenance Events on the Structural State Index</h4>
+    <p>Bah A.S., Chen X., et al.<br />
+    Case Studies in Civil Engineering, Vol. 22, 2025</p>
+    <span class="tag journal">Journal</span>
+    <span class="year">2025</span>
+    <a href="#" class="pub-link">Lien</a>
+  </div>
+
+  <div class="pub-card">
+    <h4>Chloride Ingress in De-Icing Salt-Exposed Bridge: Numerical Modeling and Field Investigations</h4>
+    <p>Khani S., Chen X., et al.<br />
+    SSRN Preprint, 2024</p>
+    <span class="tag journal">Journal</span>
+    <span class="year">2024</span>
+    <a href="#" class="pub-link">Lien</a>
+  </div>
+
+  <div class="pub-card">
+    <h4>Numerical Modeling of Multi-Ionic Transport With/Without Electrical Field Applied in Sound and Microcracked Concrete</h4>
+    <p>Chen X., et al.<br />
+    Archives of Civil and Mechanical Engineering, Vol. 23, Issue 232, 2023</p>
+    <span class="tag journal">Journal</span>
+    <span class="year">2023</span>
+    <a href="#" class="pub-link">Lien</a>
+  </div>
+
+  <!-- Conférences -->
+  <h3>Communications dans des conférences</h3>
+  
+  <div class="pub-card">
+    <h4>Measuring Chloride-Induced Structure Corrosion in Marine Environment</h4>
+    <p>Chen X., et al.<br />
+    6th International Conference on Advances in Civil and Ecological Engineering Research, 2024</p>
+    <span class="tag conference">Conférence</span>
+    <span class="year">2024</span>
+    <a href="#" class="pub-link">Lien</a>
+  </div>
+
+  <div class="pub-card">
+    <h4>UHPFRC Permeability to Chloride under Service Load</h4>
+    <p>Chen X., et al.<br />
+    4th ACIfib-RILEM Workshop on Fibre Reinforced Concrete, 2023</p>
+    <span class="tag conference">Conférence</span>
+    <span class="year">2023</span>
+    <a href="#" class="pub-link">Lien</a>
+  </div>
+
+  <!-- Thèses -->
+  <h3>Thèse de doctorat</h3>
+  
+  <div class="pub-card">
+    <h4>Modélisation numérique et étude expérimentale des comportements couplés de transport hygro-thermochimio-électrique des matériaux cimentaires</h4>
+    <p>Chen X.<br />
+    Thèse de doctorat, Université Laval, 2022</p>
+    <span class="tag thesis">Thèse</span>
+    <span class="year">2022</span>
+    <a href="#" class="pub-link">Lien</a>
+  </div>
+
+  <!-- Rapports -->
+  <h3>Rapports techniques</h3>
+  
+  <div class="pub-card">
+    <h4>TransChlor and TransChlor2D computation software user guide</h4>
+    <p>Chen X., et al.<br />
+    Manuel utilisateur, 2023</p>
+    <span class="tag report">Rapport</span>
+    <span class="year">2023</span>
+    <a href="#" class="pub-link">Lien</a>
+  </div>
+</section>
+
+<!-- PUBLICATIONS (ENGLISH) -->
+ <!-- 
+<section id="publications-en" class="publications section" lang="en" style="display:none;">
+  <h2>Publications</h2>
+  <h3>Recent Publications</h3>
+
+  <div class="pub-card">
+    <h4>Durability of Concrete Structures Exposed to Chlorides</h4>
+    <p>Chen X., Sghuri A.<br />
+    Journal of Materials in Civil Engineering, 2024</p>
+    <span class="tag">Journal</span>
+    <span class="year">2024</span>
+  </div>
+
+  <div class="pub-card">
+    <h4>Modeling Multiphysics Transport in Marine Concrete</h4>
+    <p>Chen X., Dubois M.<br />
+    International Conference on Sustainable Concrete, 2023</p>
+    <span class="tag">Conference</span>
+    <span class="year">2023</span>
+  </div>
+</section>
+-->
+
+
+
+<section class="jobs-section" id="jobs">
+  <span class="tag">Rejoignez-nous</span>
+  <h2>Postes Disponibles</h2>
+  <p class="subtitle">Contribuez à la recherche sur la durabilité des infrastructures en béton et les modèles numériques.</p>
+
+  <div class="jobs-grid">
+
+    <!-- Stage -->
+    <div class="job-card" onclick="openModal('modal-post-stage')">
+      <h3>Stage en Modélisation du Transport d’Humidité</h3>
+      <p class="department">Recherche Appliquée</p>
+      <ul class="meta">
+        <li>📍 Rimouski, Canada</li>
+        <li>🕒 Durée : 4 à 6 mois</li>
+      </ul>
+      <p class="description">
+        Travail sur la simulation numérique de l'humidité dans le béton à l’aide de méthodes par éléments finis.
+      </p>
+      <button class="details-btn" onclick="openModal('modal-job-stage')">Voir les détails</button>
+    </div>
+
+    <!-- Maîtrise -->
+    <div class="job-card" onclick="openModal('modal-post-ms')">
+      <h3>Maîtrise en ingénierie (Durabilité des Infrastructures Côtières)</h3>
+      <p class="department">Génie Civil – UQAR</p>
+      <ul class="meta">
+        <li>📍 Québec, Canada</li>
+        <li>🕒 Début : Printemps / Été 2026</li>
+      </ul>
+      <p class="description">
+        Recherches avancées en durabilité du béton, suivi intelligent, modélisation multiphysique, réhabilitation des infrastructures portuaires.
+      </p>
+      <button class="details-btn" onclick="openModal('modal-job-maitrise')">Voir les détails</button>
+    </div>
+
+    <!-- Doctorat -->
+    <div class="job-card" onclick="openModal('modal-post-phd')">
+      <h3>Doctorat en Génie Civil (Structures Côtières Durables)</h3>
+      <p class="department">Structures & Matériaux</p>
+      <ul class="meta">
+        <li>📍 Université du Québec à Rimouski</li>
+        <li>🕒 Début : Printemps / Été 2026</li>
+      </ul>
+      <p class="description">
+        Projets de recherche sur la durabilité des structures côtières, modélisation multiphysique, IA pour l’analyse des matériaux.
+      </p>
+      <button class="details-btn" onclick="openModal('modal-job-doctorat')">Voir les détails</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Modal post stage -->
+
+<div id="modal-post-stage" class="modal">
+  <div class="modal-content job">
+    <span class="close" onclick="closeModal('modal-post-stage')">&times;</span>
+    <h2>Stage en Modélisation du Transport d’Humidité</h2>
+    <p class="department">Recherche Appliquée - Rimouski</p>
+
+    <h3>Description du stage</h3>
+    <p>Travail sur la simulation numérique de l'humidité dans le béton, méthodes éléments finis, étude expérimentale et modélisation couplée.</p>
+
+    <h3>Exigences</h3>
+    <ul>
+      <li>Étudiant en génie civil, matériaux ou discipline connexe</li>
+      <li>Compétences en modélisation numérique</li>
+      <li>Connaissances en humidité / durabilité des matériaux cimentaires</li>
+      <li>Programmation : Python, MATLAB ou équivalent</li>
+    </ul>
+
+    <h3>Comment postuler</h3>
+    <p>Envoyer un courriel à Dr. Chen : <strong>xuande_chen@uqar.ca</strong> avec CV + lettre de motivation.</p>
+
+    <div class="actions">
+      <button class="btn-primary" onclick="window.location.href='mailto:xuande_chen@uqar.ca?subject=Stage%20Humidité%20-%20Candidature'">📧 Postuler</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal post maîtrise -->
+<div id="modal-post-ms" class="modal">
+  <div class="modal-content job">
+    <span class="close" onclick="closeModal('modal-post-ms')">&times;</span>
+    <h2>Maîtrise en ingénierie - Durabilité des Infrastructures Côtières</h2>
+    <p class="department">Génie Civil – UQAR</p>
+
+    <h3>Description du projet</h3>
+    <p>Le groupe de recherche du Dr. Chen recherche un étudiant en maîtrise pour contribuer à des recherches de pointe sur la durabilité des infrastructures côtières.</p>
+    <ul>
+      <li>Suivi intelligent et analyse de l’exposition climatique des ponts et chaussées</li>
+      <li>Technologies IA basées sur la physique pour la modélisation des matériaux béton</li>
+      <li>Réhabilitation et évaluation de la fiabilité des structures portuaires</li>
+    </ul>
+
+    <h3>Exigences</h3>
+    <ul>
+      <li>BSc ou diplôme en génie civil, structures, matériaux ou domaine connexe</li>
+      <li>Bonnes compétences en modélisation, mécanique, mathématiques</li>
+      <li>Programmation : MATLAB, Python, C++</li>
+      <li>Anglais et/ou français écrit et oral</li>
+    </ul>
+
+    <h3>Ce que nous offrons</h3>
+    <ul>
+      <li>Bourse : 18 000 $/an pendant 3 ans</li>
+      <li>Exonération des frais de scolarité internationaux (sous conditions GPA)</li>
+      <li>Possibilités d’assistanat</li>
+      <li>Conférences et financement complémentaire</li>
+    </ul>
+
+    <h3>Comment postuler</h3>
+    <p>Envoyer un courriel à Dr. Chen : <strong>xuande_chen@uqar.ca</strong> avec :
+      <ul>
+        <li>Lettre de motivation + objectifs de recherche</li>
+        <li>CV</li>
+        <li>Relevés de notes</li>
+        <li>Test langue (anglais/français) si disponible</li>
+      </ul>
+    </p>
+
+    <div class="actions">
+      <button class="btn-primary" onclick="window.location.href='mailto:xuande_chen@uqar.ca?subject=MSc%20Candidature'">📧 Postuler</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal post doctorat -->
+<div id="modal-post-phd" class="modal">
+  <div class="modal-content job">
+    <span class="close" onclick="closeModal('modal-post-phd')">&times;</span>
+    <h2>Doctorat en Génie Civil - Structures Côtières Durables</h2>
+    <p class="department">Structures & Matériaux – UQAR</p>
+
+    <h3>Description du projet</h3>
+    <p>Le groupe de recherche du Dr. Xuande Chen recrute un doctorant pour mener des recherches de pointe en durabilité des infrastructures côtières.</p>
+    <ul>
+      <li>Surveillance intelligente et analyse du microclimat</li>
+      <li>IA basée sur la physique pour la modélisation des matériaux</li>
+      <li>Réhabilitation des structures côtières avec matériaux composites</li>
+      <li>Simulation multi-échelles et multi-physique de la dégradation des structures</li>
+    </ul>
+
+    <h3>Exigences</h3>
+    <ul>
+      <li>Master en génie civil, structures, matériaux ou domaine connexe</li>
+      <li>Compétences solides en mathématiques, mécanique, modélisation</li>
+      <li>Programmation : MATLAB, Python, C++</li>
+      <li>Langue : anglais et/ou français</li>
+    </ul>
+
+    <h3>Atouts</h3>
+    <ul>
+      <li>Maitrise de logiciels FEM (Abaqus, Comsol)</li>
+      <li>Compétence en CFD (OpenFoam)</li>
+      <li>Connaissance des réactions électrochimiques et de la mécanique des milieux poreux</li>
+    </ul>
+
+    <h3>Ce que nous offrons</h3>
+    <ul>
+      <li>Bourse : 21 000 $/an pendant 3 ans</li>
+      <li>Exonération des frais de scolarité internationaux</li>
+      <li>Possibilités d’assistanat</li>
+      <li>Financement pour conférences nationales/internationales</li>
+    </ul>
+
+    <h3>Comment postuler</h3>
+    <p>Envoyer un courriel à Dr. Chen : <strong>xuande_chen@uqar.ca</strong> avec :
+      <ul>
+        <li>Lettre de motivation + objectifs de recherche</li>
+        <li>CV</li>
+        <li>Relevés de notes</li>
+        <li>Test langue (anglais/français)</li>
+        <li>Autres documents (optionnels)</li>
+      </ul>
+    </p>
+
+    <div class="actions">
+      <button class="btn-primary" onclick="window.location.href='mailto:xuande_chen@uqar.ca?subject=PhD%20Candidature'">📧 Postuler</button>
+    </div>
+  </div>
+</div>
+
+  <!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <h2>Contactez Notre Équipe de Recherche</h2>
+  <p class="subtitle" > Vous souhaitez collaborer, poser une question ou rejoindre notre équipe ? Nous serons ravis d’échanger avec vous.</p>
+
+  <div class="contact-grid">
+    <!-- Colonne gauche : Formulaire + infos -->
+    <div class="contact-left">
+        <!-- Formulaire -->
+        <form class="contact-form" onsubmit="return sendEmail();">
+          <div class="form-row">
+            <input type="text" id="name" placeholder="Votre nom complet *" required>
+            <input type="email" id="email" placeholder="Votre adresse email *" required>
+          </div>
+          <input type="text" id="organization" placeholder="Organisation (facultatif)">
+          <textarea id="message" placeholder="Votre message *" required></textarea>
+          <button type="submit" class="btn-primary">📩 Envoyer le message</button>
+        </form>
+
+      <!-- Infos de contact -->
+      <div class="contact-info">
+        <h3>Informations de Contact</h3>
+        <p><strong>Email :</strong> chen.xuande@uqar.ca</p>
+        <p><strong>Téléphone :</strong> +1 (418) XXX-XXXX</p>
+        <p><strong>Adresse :</strong> UQAR - Département de Mathématiques, Informatique et Génie<br>300 Allée des Ursulines, Rimouski, QC G5L 3A1</p>
+        <p><strong>Heures d'ouverture :</strong> Lundi à Vendredi, 9h00 - 17h00</p>
+
+        <h4>Suivez-nous</h4>
+        <div class="social-icons">
+          <a href="#"><img src="icons/twitter.svg" alt="Twitter"></a>
+          <a href="#"><img src="icons/linkedin.svg" alt="LinkedIn"></a>
+        </div>
+      </div>
+    </div>
+
+      <!-- Colonne droite : Carte -->
+      <div class="contact-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2751.322961248453!2d-68.52986848487222!3d48.45077587925306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cae1aa769cf3be7%3A0xc9ae49df6f6e6045!2sUniversit%C3%A9%20du%20Qu%C3%A9bec%20%C3%A0%20Rimouski!5e0!3m2!1sfr!2sca!4v1718154949011!5m2!1sfr!2sca" 
+              width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+  </div>
+</section>
+
+
+
+  
+<script>
+  const navbar = document.querySelector('.navbar');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    // Apparence compacte
+    if (currentScrollY > 30) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+
+    // Masquer la navbar si on scroll vers le bas
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      navbar.classList.add('hidden');
+    } else {
+      navbar.classList.remove('hidden');
+    }
+
+    // Mise à jour du lien actif
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+
+    lastScrollY = currentScrollY;
+  });
+
+  // Clic sur les liens de navigation
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Scroll doux CSS
+  document.documentElement.style.scrollBehavior = "smooth";
+
+  // Apparition animée des éléments
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.fade-in, .reveal, .slide-left, .slide-right').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+<script>
+  // Ouvrir une modale
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+
+    // Forcer Aperçu (le premier bouton de tabs)
+    const firstTabButton = modal.querySelector('.tabs .tab');
+    const firstTabId = firstTabButton.getAttribute('onclick').match(/'(.*?)'/)[1];
+
+    openTab(firstTabId, { target: firstTabButton });
+  }
+
+  // Fermer une modale
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  // Fermer la modale en cliquant à l’extérieur
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal(modal.id);
+      }
+    });
+  });
+
+  // Gestion des onglets dans la modale
+  function openTab(tabId, event) {
+    const modalContent = event.target.closest('.modal-content');
+
+    modalContent.querySelectorAll('.tab-content').forEach(tab => {
+      tab.style.display = 'none';
+    });
+
+    modalContent.querySelectorAll('.tab').forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    document.getElementById(tabId).style.display = 'block';
+
+    if (event && event.target) {
+      event.target.classList.add('active');
+    }
+  }
+
+  // Supprime ton window.addEventListener('DOMContentLoaded') car openModal va déjà forcer l'aperçu
+</script>
+
+<script>
+function sendEmail() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const organization = document.getElementById('organization').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  // Adresse email de destination
+  const to = 'xuande_chen@uqar.ca';
+
+  // Sujet de l'email
+  const subject = encodeURIComponent('Contact depuis le site - ' + name);
+
+  // Corps de l'email
+  const body = encodeURIComponent(
+    `Nom : ${name}\n` +
+    `Email : ${email}\n` +
+    `Organisation : ${organization}\n\n` +
+    `Message :\n${message}`
+  );
+
+  // Génère le lien mailto
+  const mailtoLink = `mailto:${to}?subject=${subject}&body=${body}`;
+
+  // Ouvre le client mail
+  window.location.href = mailtoLink;
+
+  // Ne pas soumettre le formulaire HTML (sinon la page se recharge)
+  return false;
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
