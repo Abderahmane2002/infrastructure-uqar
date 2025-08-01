@@ -415,6 +415,13 @@
       <p class="role">Professor, Université du Québec à Rimouski</p>
       <p>Specialist in civil engineering applied to smart and sustainable structures, advanced modeling, and material dynamics.</p>
     </div>
+     <!-- Guillaume Savard -->
+    <div class="card" onclick="openModal('modal-savard')">
+      <img src="images/guillaume-savard.jpg" alt="Guillaume Savard" />
+      <h3>Guillaume Savard</h3>
+      <p class="role">Research Officer and CRIB Coordinator, UQAR</p>
+      <p>Specialist in engineering and innovation for concrete infrastructures and research project coordination.</p>
+    </div>
   </div>
   <!-- Students -->
   <h3 class="subsection-title">Students</h3>
@@ -526,7 +533,34 @@
     </div>
   </div>
 </div>
+<!-- MODAL GUILLAUME SAVARD -->
+<div id="modal-savard" class="modal">
+  <div class="modal-content profile-modal">
+    <div class="profile-left">
+      <img src="images/guillaume-savard.jpg" alt="Guillaume Savard">
+    </div>
+    <div class="profile-right">
+      <span class="close" onclick="closeModal('modal-savard')">&times;</span>
+      <h2>Guillaume Savard</h2>
+      <p class="role">Research Officer and CRIB Coordinator</p>
+      <p class="field">Université du Québec à Rimouski</p>
 
+      <h3>Biography</h3>
+      <p>Guillaume Savard worked as a building structure consultant from 2018 to 2023, designing structures for various projects in collaboration with both the private and public sectors.  
+      He is now contributing to engineering innovation projects as a research officer within the Regional Support Platform for Innovation in Engineering (PARI-G) at UQAR.  
+      He also serves as the coordinator of the Concrete Infrastructure Research Center (CRIB), where he manages participant communication, partner engagement, and knowledge transfer.</p>
+
+      <h3>Research Domain</h3>
+      <div class="tags">
+        <span>General</span>
+      </div>
+      <div class="actions">
+        <button class="btn-primary" onclick="window.location.href='mailto:guillaume_savard@uqar.ca'">Contact</button>
+        <button class="btn-outline" onclick="window.open('https://www.linkedin.com/in/guillaume-savard-5ba19a67/', '_blank')">Full Profile</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- MODAL ABDERRAHMANE -->
 <!-- modal-abderrahmane -->
 <div id="modal-abderrahmane" class="modal">
@@ -1108,3 +1142,4 @@ function sendEmail() {
 
 </body>
 </html>
+
